@@ -29,6 +29,7 @@ function playRound() {
                 break;
             default:
                 console.log("There was a problem. Try again later.");
+                break;
         }
     } else if (playerSelection === "paper") {
         switch (computerSelection) {
@@ -40,19 +41,35 @@ function playRound() {
                 break;
             case "scissors":
                 console.log("You loose! Scissors beats Paper.");
+                break;
             default:
                 console.log("There was a problem. Try again later.");
+                break;
         }
-    } else if (playerSelection === " scissors") {
+    } else if (playerSelection === "scissors") {
         switch (computerSelection) {
             case "rock":
                 console.log("You loose! Rock beats Scissors!");
+                break;
             case "scissors":
                 console.log("It's a tie! You both picked Scissors.");
+                break;
             case "paper":
-                console.log("You win! Scissors beats Paper.")
+                console.log("You win! Scissors beats Paper.");
+                break;
+            default:
+                console.log("There was a problem");
+                break;
         }
     } else {
         console.log("Invalid choice, try again");
     }
+
 }
+
+playRound();
+
+
+
+
+

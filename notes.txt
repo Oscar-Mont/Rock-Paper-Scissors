@@ -5,10 +5,13 @@ Objective: a console based program that plays a rosk paper scissors game
 PROGRAM STRUCTURE:
 
 A function that generates a random choice from the machine.
->>>will require a variable to asssign the choice to and return
+>>>will require a variable to assign the choice to and return
+
 A function that aks the user for input.
 >>>Will require a variable to assign the user input and return its value
+
 A function that executes a round of the game, executing the previous functions and assigning their return values to variables.
 >>>Will require two variables to assign each choice to using the other functions. 
 >>>A Conditional section to compare the options and console log the result of the round. 
-A fucntion that executes the game within a loop so it's possible to play multiple rounds. 
+
+Odin Project asks to execute the program 5 times so the playRound function will be caleld 5 times for now. Next lesson is on loops and this project will be revisited. 
