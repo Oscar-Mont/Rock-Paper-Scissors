@@ -1,4 +1,3 @@
-
 //Make a function that randomly chooses rock paper or scissors
 function getComputerChoice() {
     choiceArray = ["rock", "paper", "scissors"];
@@ -6,15 +5,15 @@ function getComputerChoice() {
     return choice;
 }
 
-//function that asks the user for their choice
-function getPlayerChoice() {
-    let playerChoice = prompt("Choose Rock, Paper or Scissors: ");
-    return playerChoice.toLowerCase();
-}
+// //function that asks the user for their choice
+// function getPlayerChoice() {
+//     let playerChoice = prompt("Choose Rock, Paper or Scissors: ");
+//     return playerChoice.toLowerCase();
+// }
 
-//play the round
-function playRound() {
-    let playerSelection = getPlayerChoice();
+//function to play a round
+function playRound(playSelect) {
+    let playerSelection = playSelect;
     let computerSelection = getComputerChoice();
     if (playerSelection === "rock") {
         switch (computerSelection) {
@@ -67,8 +66,28 @@ function playRound() {
 
 }
 
-playRound();
 
+//Event Listeners to play the game
+const rockBtn = document.querySelector(".rock");
+const paperBtn = document.querySelector(".paper");
+const scissorsBtn = document.querySelector(".scissors");
+
+
+
+rockBtn.addEventListener("click", () => {
+    playSelect = "rock";
+    playRound(playSelect);
+})
+
+paperBtn.addEventListener("click", () => {
+    playSelect = "paper";
+    playRound(playSelect);
+})
+
+scissorsBtn.addEventListener("click", () => {
+    playSelect = "scissors";
+    playRound(playSelect);
+})
 
 
 
