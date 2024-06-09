@@ -25,12 +25,12 @@ function playRound(playSelect) {
                 resultList.appendChild(resultItem);
                 break;
             case "paper":
-                resultItem.textContent = "You loose! Rock looses to Paper.";
+                resultItem.textContent = "You loose! Rock looses to Paper!";
                 resultItem.style["background-color"] = "red";
                 resultList.appendChild(resultItem);
                 break;
             case "scissors":
-                resultItem.textContent = "It's a tie! The Player and Computer picked";
+                resultItem.textContent = "You win! Rock beats Scissors!";
                 resultItem.style["background-color"] = "green";
                 resultList.appendChild(resultItem);
                 break;
@@ -41,18 +41,18 @@ function playRound(playSelect) {
     } else if (playerSelection === "paper") {
         switch (computerSelection) {
             case "rock":
-                resultItem.textContent = "It's a tie! The Player and Computer picked Rock!";
-                resultItem.style["background-color"] = "yellow";
+                resultItem.textContent = "You win! Paper beats Rock!";
+                resultItem.style["background-color"] = "green";
                 resultList.appendChild(resultItem);
                 break;
             case "paper":
-                resultItem.textContent = "You loose! Rock looses to Paper.";
-                resultItem.style["background-color"] = "red";
+                resultItem.textContent = "It's a tie! the Computer and the Player both picked Paper!";
+                resultItem.style["background-color"] = "yellow";
                 resultList.appendChild(resultItem);
                 break;
             case "scissors":
-                resultItem.textContent = "It's a tie! The Player and Computer picked";
-                resultItem.style["background-color"] = "green";
+                resultItem.textContent = "You loose! Paper looses to Scissors!";
+                resultItem.style["background-color"] = "red";
                 resultList.appendChild(resultItem);
                 break;
             default:
@@ -62,18 +62,18 @@ function playRound(playSelect) {
     } else if (playerSelection === "scissors") {
         switch (computerSelection) {
             case "rock":
-                resultItem.textContent = "It's a tie! The Player and Computer picked Rock!";
-                resultItem.style["background-color"] = "yellow";
-                resultList.appendChild(resultItem);
-                break;
-            case "paper":
-                resultItem.textContent = "You loose! Rock looses to Paper.";
+                resultItem.textContent = "You loose! Scissors loose to Rock!";
                 resultItem.style["background-color"] = "red";
                 resultList.appendChild(resultItem);
                 break;
-            case "scissors":
-                resultItem.textContent = "It's a tie! The Player and Computer picked";
+            case "paper":
+                resultItem.textContent = "You win! Scissors beat Paper!";
                 resultItem.style["background-color"] = "green";
+                resultList.appendChild(resultItem);
+                break;
+            case "scissors":
+                resultItem.textContent = "It's a tie! The Player and Computer picked Scissors!";
+                resultItem.style["background-color"] = "yellow";
                 resultList.appendChild(resultItem);
                 break;
             default:
