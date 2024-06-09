@@ -15,16 +15,24 @@ function getComputerChoice() {
 function playRound(playSelect) {
     let playerSelection = playSelect;
     let computerSelection = getComputerChoice();
+    const resultItem = document.createElement("div");
+    resultItem.className = "result-div";
     if (playerSelection === "rock") {
         switch (computerSelection) {
             case "rock":
-                console.log("It's a tie! You both picked Rock");
+                resultItem.textContent = "It's a tie! The Player and Computer picked Rock!";
+                resultItem.style["background-color"] = "yellow";
+                resultList.appendChild(resultItem);
                 break;
             case "paper":
-                console.log("You loose! Paper beats Rock.");
+                resultItem.textContent = "You loose! Rock looses to Paper.";
+                resultItem.style["background-color"] = "red";
+                resultList.appendChild(resultItem);
                 break;
             case "scissors":
-                console.log("You win! Rock beats Scissors.");
+                resultItem.textContent = "It's a tie! The Player and Computer picked";
+                resultItem.style["background-color"] = "green";
+                resultList.appendChild(resultItem);
                 break;
             default:
                 console.log("There was a problem. Try again later.");
@@ -33,13 +41,19 @@ function playRound(playSelect) {
     } else if (playerSelection === "paper") {
         switch (computerSelection) {
             case "rock":
-                console.log("You win! Paper beats Rock.");
+                resultItem.textContent = "It's a tie! The Player and Computer picked Rock!";
+                resultItem.style["background-color"] = "yellow";
+                resultList.appendChild(resultItem);
                 break;
             case "paper":
-                console.log("It's a tie! You both picked Paper.");
+                resultItem.textContent = "You loose! Rock looses to Paper.";
+                resultItem.style["background-color"] = "red";
+                resultList.appendChild(resultItem);
                 break;
             case "scissors":
-                console.log("You loose! Scissors beats Paper.");
+                resultItem.textContent = "It's a tie! The Player and Computer picked";
+                resultItem.style["background-color"] = "green";
+                resultList.appendChild(resultItem);
                 break;
             default:
                 console.log("There was a problem. Try again later.");
@@ -48,16 +62,22 @@ function playRound(playSelect) {
     } else if (playerSelection === "scissors") {
         switch (computerSelection) {
             case "rock":
-                console.log("You loose! Rock beats Scissors!");
-                break;
-            case "scissors":
-                console.log("It's a tie! You both picked Scissors.");
+                resultItem.textContent = "It's a tie! The Player and Computer picked Rock!";
+                resultItem.style["background-color"] = "yellow";
+                resultList.appendChild(resultItem);
                 break;
             case "paper":
-                console.log("You win! Scissors beats Paper.");
+                resultItem.textContent = "You loose! Rock looses to Paper.";
+                resultItem.style["background-color"] = "red";
+                resultList.appendChild(resultItem);
+                break;
+            case "scissors":
+                resultItem.textContent = "It's a tie! The Player and Computer picked";
+                resultItem.style["background-color"] = "green";
+                resultList.appendChild(resultItem);
                 break;
             default:
-                console.log("There was a problem");
+                console.log("There was a problem. Try again later.");
                 break;
         }
     } else {
@@ -68,12 +88,15 @@ function playRound(playSelect) {
 
 
 //Event Listeners to play the game
+
+//variables for buttons
 const rockBtn = document.querySelector(".rock");
 const paperBtn = document.querySelector(".paper");
 const scissorsBtn = document.querySelector(".scissors");
+const resultList = document.querySelector(".results");
 
 
-
+//button event listeners
 rockBtn.addEventListener("click", () => {
     playSelect = "rock";
     playRound(playSelect);
@@ -89,6 +112,6 @@ scissorsBtn.addEventListener("click", () => {
     playRound(playSelect);
 })
 
-
+//results code
 
 
