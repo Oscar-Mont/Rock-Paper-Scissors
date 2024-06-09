@@ -1,7 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
 
-//Make a function that randomly chooses rock paper or scissors
 function getComputerChoice() {
     choiceArray = ["rock", "paper", "scissors"];
     let choice = choiceArray[Math.floor(Math.random() * choiceArray.length)];
@@ -9,7 +8,6 @@ function getComputerChoice() {
 }
 
 
-//function to play a round
 function playRound(playSelect) {
     let playerSelection = playSelect;
     let computerSelection = getComputerChoice();
@@ -90,12 +88,32 @@ function playRound(playSelect) {
 
 }
 
+
 function updateScoreDisplay() {
     const playerScoreDisplay = document.querySelector(".player-score");
     const computerScoreDisplay = document.querySelector(".computer-score");
 
     playerScoreDisplay.textContent = `Player Score: ${playerScore}`
     computerScoreDisplay.textContent = `Computer Score: ${computerScore}`
+}
+
+function checkGameOver() {
+    if (playerScore === 5 || computerScore === 5) {
+        const gameOver = document.createElement("div");
+        gameOver.style["background-color"] = "blue";
+        if (computerScore > playerScore) {
+            gameOver.textContent = "Game over! Computer wins! Refresh the page to play again."
+        } else {
+            gameOver.textContent = "You win! Refresh the page to play again."
+        }
+
+        resultList.appendChild(gameOver);
+
+        //disable buttons
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
+    }
 }
 
 // || Event Listeners to play the game ||
@@ -114,19 +132,24 @@ rockBtn.addEventListener("click", () => {
     playSelect = "rock";
     playRound(playSelect);
     updateScoreDisplay();
+    checkGameOver();
 })
 
 paperBtn.addEventListener("click", () => {
     playSelect = "paper";
     playRound(playSelect);
     updateScoreDisplay();
+    checkGameOver();
 })
 
 scissorsBtn.addEventListener("click", () => {
     playSelect = "scissors";
     playRound(playSelect);
     updateScoreDisplay();
+    checkGameOver();
 })
+
+
 
 //results code
 
